@@ -7,12 +7,15 @@
 
 <script>
 import { mapGetters } from "vuex";
+import * as types from "../store/types";
+
+const { GET_COUNTER, CLICK_COUNTER } = types;
 
 export default {
   computed: {
     ...mapGetters({
-      counter: "doubleCounter",
-      clicks: "stringCounter"
+      counter: GET_COUNTER,
+      clicks: CLICK_COUNTER
     })
   }
 };

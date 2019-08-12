@@ -3,11 +3,14 @@
 </template>
 
 <script>
+import * as types from "../store/types";
+
+const { GET_COUNTER } = types;
+
 export default {
-  // props: ['counter']
   computed: {
     counter() {
-      return this.$store.getters.getCounter;
+      return this.$store.getters[GET_COUNTER];
     }
   }
 };
