@@ -9,13 +9,13 @@
 import { mapGetters } from "vuex";
 import * as types from "../store/types";
 
-const { GET_COUNTER, CLICK_COUNTER } = types;
+const { GETTER_GET_COUNTER, GETTER_CLICK_COUNTER } = types;
 
 export default {
   computed: {
     ...mapGetters({
-      counter: GET_COUNTER,
-      clicks: CLICK_COUNTER
+      counter: GETTER_GET_COUNTER,
+      clicks: GETTER_CLICK_COUNTER
     })
   }
 };

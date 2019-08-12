@@ -1,5 +1,9 @@
+import * as types from "./types";
+
 // Default getters with no modules
 
-export const value = state => {
-  return state.value;
+export default {
+  [types.GETTER_GET_VALUE]: state => {
+    return state.value;
+  }
 };

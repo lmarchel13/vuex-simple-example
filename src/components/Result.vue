@@ -5,12 +5,12 @@
 <script>
 import * as types from "../store/types";
 
-const { GET_COUNTER } = types;
+const { GETTER_GET_COUNTER } = types;
 
 export default {
   computed: {
     counter() {
-      return this.$store.getters[GET_COUNTER];
+      return this.$store.getters[GETTER_GET_COUNTER];
     }
   }
 };

@@ -7,9 +7,14 @@
 
 <script>
 import { mapMutations } from "vuex";
+import * as types from "../store/types";
+
 export default {
   methods: {
-    ...mapMutations(["increment", "decrement"])
+    ...mapMutations({
+      increment: types.MUTATION_INCREMENT_COUNTER,
+      decrement: types.MUTATION_DECREMENT_COUNTER
+    })
   }
 };
 </script>

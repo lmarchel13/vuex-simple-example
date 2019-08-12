@@ -7,11 +7,13 @@
 
 <script>
 import { mapActions } from "vuex";
+import * as types from "../store/types";
+
 export default {
   methods: {
     ...mapActions({
-      increment: "increment",
-      decrement: "decrement"
+      increment: types.ACTION_INCREMENT_COUNTER,
+      decrement: types.ACTION_DECREMENT_COUNTER
     })
   }
 };

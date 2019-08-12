@@ -1,5 +1,8 @@
+import * as types from "./types";
 // Default actions with no modules
 
-export const updateValue = ({ commit }, payload) => {
-  commit("updateValue", payload);
+export default {
+  [types.ACTION_UPDATE_VALUE]: ({ commit }, payload) => {
+    commit(types.MUTATION_UPDATE_VALUE, payload);
+  }
 };

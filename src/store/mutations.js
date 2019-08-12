@@ -1,5 +1,8 @@
+import * as types from "./types";
 // Default mutations with no modules
 
-export const updateValue = (state, payload) => {
-  state.value = payload;
+export default {
+  [types.MUTATION_UPDATE_VALUE]: (state, payload) => {
+    state.value = payload;
+  }
 };

@@ -1,5 +1,4 @@
 import * as types from "../types";
-import { type } from "os";
 
 const state = {
   counter: 0
@@ -7,39 +6,39 @@ const state = {
 
 const getters = {
   // getCounter: state => {
-  [types.GET_COUNTER]: state => {
+  [types.GETTER_GET_COUNTER]: state => {
     return state.counter;
   },
-  [types.DOUBLE_COUNTER]: state => {
+  [types.GETTER_DOUBLE_COUNTER]: state => {
     return state.counter * 2;
   },
-  [types.CLICK_COUNTER]: state => {
+  [types.GETTER_CLICK_COUNTER]: state => {
     return `${state.counter} clicks`;
   }
 };
 
 const mutations = {
-  increment: (state, payload) => {
+  [types.MUTATION_INCREMENT_COUNTER]: (state, payload) => {
     state.counter += payload;
   },
-  decrement: (state, payload) => {
+  [types.MUTATION_DECREMENT_COUNTER]: (state, payload) => {
     state.counter -= payload;
   }
 };
 
 const actions = {
   // increment: context => {
-  increment: ({ commit }, payload) => {
+  [types.ACTION_INCREMENT_COUNTER]: ({ commit }, payload) => {
     const { step, delay } = payload;
     setTimeout(() => {
       // context.commit("increment");
-      commit("increment", step);
+      commit(types.MUTATION_INCREMENT_COUNTER, step);
     }, delay);
   },
-  decrement: ({ commit }, payload) => {
+  [types.ACTION_DECREMENT_COUNTER]: ({ commit }, payload) => {
     const { step, delay } = payload;
     setTimeout(() => {
-      commit("decrement", step);
+      commit(types.MUTATION_DECREMENT_COUNTER, step);
     }, delay);
   }
 };
